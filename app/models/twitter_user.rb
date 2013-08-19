@@ -14,4 +14,10 @@ class TwitterUser < ActiveRecord::Base
     stale =  Time.now - tweets_stale 
     return (stale/60 > 15)
   end
+
+
+  def fetch_followers!
+    followers = Twitter.followers(self.name)
+    followers.map{ |follower| follower.attr[:name] }
+  end
 end

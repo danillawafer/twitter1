@@ -1,4 +1,5 @@
 <div class='container'>
+  <center><a href="/<%= @username %>/followers">Followers</a></center>
   <% @tweets.each do |tweet| %>
     <strong><%= tweet.content %></strong><br>
     <%= tweet.tweet_date %><br>
