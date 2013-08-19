@@ -1,0 +1,7 @@
+<div class='container'>
+  <% @tweets.each do |tweet| %>
+    <strong><%= tweet.content %></strong><br>
+    <%= tweet.tweet_date %><br>
+    <br>
+  <% end %>
+</div>
