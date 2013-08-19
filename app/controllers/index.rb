@@ -18,14 +18,24 @@ post '/' do
   erb :show_tweets
 end
 
-get '/:username' do 
-  @tweets = get_tweets(params[:username])
-  erb :show_tweets
-end
+# get '/:username' do 
+#   @tweets = get_tweets(params[:username])
+#   erb :show_tweets
+# end
 
 
 get '/:username/followers' do
   user = TwitterUser.find_by_name(params[:username])
   @followers = user.fetch_followers!
   erb :followers
+end
+
+post '/tweet' do
+  @tweet = params[:tweet]
+  make_the_tweet
+  redirect '/tweet_success'
+end
+
+get '/tweet_success' do
+  erb :success
 end
