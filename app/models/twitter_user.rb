@@ -18,6 +18,6 @@ class TwitterUser < ActiveRecord::Base
 
   def fetch_followers!
     followers = Twitter.followers(self.name)
-    followers.map{ |follower| follower.attr[:name] }
+    followers.map{ |follower| follower.attrs[:name] }
   end
 end
