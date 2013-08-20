@@ -13,7 +13,7 @@ $(document).ready(function() {
       console.log("im back baby!!");
       $(".container").replaceWith(data);
     });
-  });
+  }); 
 
 
   $(document).on('click', '#followers', function(){
